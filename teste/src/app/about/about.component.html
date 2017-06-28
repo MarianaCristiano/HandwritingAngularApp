@@ -1,0 +1,114 @@
+
+<script scr="/js/about.js" type="text/javascript"></script>
+
+<div class="container-fluid">
+    <!--<div class="jumbotron text-center">-->
+    <div class="jumbotron">
+        <!--<h1>
+          <span translate>APP_NAME</span>
+        </h1>-->
+        <!--<p>
+          <i class="fa fa-bookmark-o"></i> <span translate>Version</span> {{version}}
+        </p>-->
+        <div class="container">
+            <div class="row">
+                <form>
+
+                    <div class="col-md-12 col-xs-12">
+
+                        <label *ngFor="let hw of handWriting">{{hw.title}}</label>
+                        <h1>
+                            <span translate>Make your handwritten note special</span>
+                        </h1>
+                        <br />
+                        <div class="row">
+                            <!-- Bloco esquerda -->
+                            <div class="col-md-4 col-xs-12">
+                                <label class="col-md-12 col-xs-12 margin-bottom-25" for="handwriting">Handwriting</label>
+                                
+                                <md-select (click)="loadHandwriting()" class="col-md-12 col-xs-12" placeholder="Handwriting" [(ngModel)]="selectedHandwriting" name="food">
+                                    <md-option *ngFor="let hw of handWriting" [value]="hw.id">
+                                        {{hw.title}}
+                                    </md-option> 
+                                </md-select>
+                                <br />
+
+                                <md-input-container class="col-md-12 col-xs-12">
+                                    <textarea mdInput placeholder="Type something here... (max 1000 characters)" ng-model="text" #a></textarea>
+                                </md-input-container>
+
+
+
+                            </div>
+
+                            <!-- Bloco direita -->
+                            <div class="col-md-8 col-xs-12">
+                                <div class="row">
+                                    <label class="col-md-3 col-xs-12 teste" for="small" (click)="setHandwritingSize(12)">Small</label>
+                                    <label class="col-md-3 col-xs-12" for="medium" (click)="setHandwritingSize(24)">Medium</label>
+                                    <label class="col-md-3 col-xs-12" for="large" (click)="setHandwritingSize(36)">Large</label>
+                                    <label class="col-md-3 col-xs-12" for="xl" (click)="setHandwritingSize(48)">XL</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 col-xs-12">
+                                        <label class="color red" for="red" (click)="setHandwritingColor('#ff0000')"></label>
+                                    </div>
+                                    <div class="col-md-1 col-xs-12">
+                                        <label class="color pink" for="pink" (click)="setHandwritingColor('#ffc0cb')"></label>
+                                    </div>
+                                    <div class="col-md-1 col-xs-12">
+                                        <label class="color orange" for="orange" (click)="setHandwritingColor('#ffa500')"></label>
+                                    </div>
+                                    <div class="col-md-1 col-xs-12">
+                                        <label class="color green" for="green" (click)="setHandwritingColor('#008000')"></label>
+                                    </div>
+                                    <div class="col-md-1 col-xs-12">
+                                        <label class="color blue" for="blue" (click)="setHandwritingColor('#0000ff')"></label>
+                                    </div>
+                                    <div class="col-md-1 col-xs-12">
+                                        <label class="color purple" for="purple" (click)="setHandwritingColor('#800080')"></label>
+                                    </div>
+                                    <div class="col-md-1 col-xs-12">
+                                        <label class="color brown" for="brown" (click)="setHandwritingColor('#a52a2a')"></label>
+                                    </div>
+                                    <div class="col-md-1 col-xs-12">
+                                        <label class="color black zoom-in" for="black" (click)="setHandwritingColor('#000000')"></label>
+                                    </div>
+                                    <div class="col-md-1 col-xs-12">
+                                        <label class="color grey" for="grey" (click)="setHandwritingColor('#808080')"></label>
+                                    </div>
+                                </div>
+                                <div div="row">
+                                    <img id="img-result" class="col-md-12 img-result" width="100" height="500"/>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <button md-button class="reset-form">Reset</button>
+                            </div>
+
+                            <div class="col-md-2">
+                                <button md-button class="create-png" (click)="onSubmit(a.value)">Create PNG</button>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                    <!--<p> Selected value: {{selectedValue}} </p>
+
+                    <p>
+                        <md-checkbox>Check me!</md-checkbox>
+                    </p>-->
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
